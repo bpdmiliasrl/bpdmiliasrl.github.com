@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap, from Twitter</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le styles -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <style type="text/css">
+
+            body {
+                background:url("patternback.png");
+            }
+            .black {
+
+                background-color:#222;
+                color: #ccc;
+            }
+            .black h1{
+                color: #ccc;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Project name</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+
+            <ul id="images" class="thumbnails">
+            </div>
+        </div>
+        <!-- Example row of columns -->
+        <hr>
+
+        <footer>
+        <p>&copy; Company 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+                /*
+                   var json_Album_URI = "https://picasaweb.google.com/data/feed/base/"
+                   + "user/"       +   "110848800261753814612"
+                   + "?alt="       +   "json"
+                   + "&kind="      +   "album"
+                   + "&hl="        +   "en_US"
+                   + "&fields="    +   "entry(media:group,id)"
+                   + "&thumbsize=" +   220;
+
+                   $.getJSON(json_Album_URI,
+                   function(data){
+                   $.each(data.feed.entry, function(i,item){
+            //Thumbnail URL
+            var album_ID = item.id.$t;
+            album_ID = album_ID.split('/')[9].split('?')[0];
+            $.each(item.media$group.media$thumbnail, function(i,item){
+            var album_thumb_URL = item.url;
+            $('#images').append("<li class='span3'><a class='thumbnail' href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><br/>");
+            });
+            //Album Title
+            var album_Title = item.media$group.media$title.$t;
+            $('#images').append("<h5 style='display:block'>" + album_Title + '</h5></li>');
+            //Album Description
+            var album_Description = item.media$group.media$description.$t;
+            //            $('#images').append("Album Description: " + album_Description + '<br />');
+            //Album ID
+            //Get Numerical ID from URL
+            //           $('#images').append("AlbumID: " + album_ID + '<br /><br />');
+                 */
+            var address = window.location.toString();
+            album_ID = address.split('?')[1].split('&')[0].split('=')[1];
+            var required_ID = address.split('?')[1].split('&')[1].split('=')[1];
+            var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
+                + "user/"       +   "110848800261753814612"
+                + "/albumid/"   +  album_ID 
+                + "?alt="       +   "json"
+                + "&kind="      +   "photo"
+                + "&hl="        +   "en_US"
+                + "&fields="    +   "entry(media:group,id)"
+                + "&thumbsize=" +   220
+                + "&imgmax="    +   1600;
+
+            $.getJSON(json_Photo_URI,
+                    function(data){
+                    $.each(data.feed.entry, function(i,item){
+                        //Photo URL
+                        var photo_URL ;
+                        $.each(item.media$group.media$content, function(i,item){
+                            //                $('#images').append("Image Photo URL: <a href='" + photo_URL + "'>Photo</a><br />");
+                            photo_URL = item.url;
+                            });
+                        //Thumbnail URL
+                        var photo_Thumb_URL ;
+                        $.each(item.media$group.media$thumbnail, function(i,item){
+                            //                        $.each(item.media$group.media, function(i,item){
+                            photo_Thumb_URL = item.url;
+                        });
+                            var photo_ID = item.id.$t;
+                            photo_ID = photo_ID.split('/')[11].split('?')[0];
+                            if (required_ID === photo_ID){
+                            $('#images').append("<li> <a class='thumbnail' href='/product?id="+ photo_ID +"'><img src='" + photo_URL + "'></a></li>");
+                            //Photo Title
+                            var photo_Title = item.media$group.media$title.$t;
+                            //                        $('#images').append("Image Photo_Title: " + photo_Title + '<br />');
+                            //Photo Description
+                            //           var photo_Description = item.media$group.media$description.$t;
+                            //          $('#images').append("Image Photo Description: " + photo_Description + '<br /><br />');
+                            exit();
+                            }
+                            });
+                    });
+                    });
+            </script>
+            <script type="text/javascript">
+                //       $("#picasa-gallery").picasaGallery("110848800261753814612","5704527168476878593");
+            </script>
+        </body>
+    </html>
