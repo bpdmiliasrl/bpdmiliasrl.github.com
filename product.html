@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Bootstrap, from Twitter</title>
+        <title>Product - Catalog - BPD Milia</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -19,7 +19,7 @@
                 padding-bottom: 40px;
             }
         </style>
-        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
         <!-- Le fav and touch icons -->
         <link rel="shortcut icon" href="images/favicon.ico">
@@ -52,11 +52,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Project name</a>
+                    <a class="brand" href="#">BPD Milia</a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Google+</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -66,16 +68,13 @@
 
         <div class="container">
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-
             <ul id="images" class="thumbnails">
             </div>
         </div>
-        <!-- Example row of columns -->
         <hr>
 
         <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; BPD Milia 2012</p>
         </footer>
 
     </div> <!-- /container -->
@@ -148,7 +147,7 @@
                             var photo_ID = item.id.$t;
                             photo_ID = photo_ID.split('/')[11].split('?')[0];
                             if (required_ID === photo_ID){
-                            $('#images').append("<li> <a class='thumbnail' href='/product?id="+ photo_ID +"'><img src='" + photo_URL + "'></a></li>");
+                            $('#images').append("<li class='span8'> <a class='thumbnail' href='/product?id="+ photo_ID +"'><img src='" + photo_URL + "'></a></li>");
                             //Photo Title
                             var photo_Title = item.media$group.media$title.$t;
                             //                        $('#images').append("Image Photo_Title: " + photo_Title + '<br />');
