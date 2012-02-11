@@ -1,95 +1,74 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Catalog - BPD Milia</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
 
-        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+        <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+            <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+                <head>
+                    <meta charset="utf-8" />
 
-        <!-- Le styles -->
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
-        <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+                    <!-- Set the viewport width to device width for mobile -->
+                    <meta name="viewport" content="width=device-width" />
 
-        <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="images/favicon.ico">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-        <style type="text/css">
+                    <title>Welcome to Foundation</title>
 
-            body {
-                background:url("patternback.png");
-            }
-            .black {
+                    <!-- Included CSS Files -->
+                    <link rel="stylesheet" href="stylesheets/foundation.css">
+                    <link rel="stylesheet" href="stylesheets/app.css">
 
-                background-color:#222;
-                color: #ccc;
-            }
-            .black h1{
-                color: #ccc;
-            }
-        </style>
-    </head>
+                    <!--[if lt IE 9]>
+                    <link rel="stylesheet" href="stylesheets/ie.css">
+                    <![endif]-->
 
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <div class="row-fluid">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="brand" href="#">BPD Milia</a>
-                        <div class="nav-collapse">
-                            <ul class="nav">
-                                <li class="active"><a href="/">Home</a></li>
-                                <li><a href="">Blog</a></li>
-                                <li><a href="">Facebook</a></li>
-                                <li><a href="">Google+</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div><!--/.nav-collapse -->
+
+                    <!-- IE Fix for HTML5 Tags -->
+                    <!--[if lt IE 9]>
+                    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                    <![endif]-->
+
+	<link rel="stylesheet" href="stylesheets/my.css">
+
+                </head>
+
+                <body>
+
+                    <div class="container black">
+                        <div class="row">
+                            <div class="three columns">
+                                    <a  href="/"><h1>BPD Milia</h1></a>
+                                </div>
+                                <div class="one columns"><a href="/"><h5>Αρχική</h5></a></div>
+                                <div class="one columns"><a href=""><h5>Blog</h5></a></div>
+                                <div class="one columns"><a href=""><h5>Facebook</h5></a></div>
+                                <div class="one columns"><a href=""><h5>Google+</h5></a></div>
+                                    <div class="three columns"></div>
+                                </dl>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-
-            <div class="row-fluid">
-                <div class="span12">
-                    <ul id="images" class="thumbnails"></ul>
-                </div>
-            </div>
-        </div>
-        <!-- Example row of columns -->
-        <hr>
-
-        <footer>
-        <p>&copy; Company 2012</p>
-        </footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="twelve columns">
+                                <ul id="images" class="block-grid mobile four-up"></ul>
+                            </div>
+                        </div>
+                    </div>
 
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js/jquery.js"></script>
+
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/modernizr.foundation.js"></script>
+	<script src="/javascripts/foundation.js"></script>
+	<script src="/javascripts/app.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
+//        $(document).ready(function(){
                 var album_ID = window.location.toString();
                 album_ID = album_ID.split('?')[1].split('=')[1];
                 var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
@@ -99,7 +78,7 @@
                 + "&kind="      +   "photo"
                 + "&hl="        +   "en_US"
                 + "&fields="    +   "entry(media:group,id)"
-                + "&thumbsize=" +   "160"
+                + "&thumbsize=" +   "220"
                 + "&imgmax="    +   1600;
 
                 $.getJSON(json_Photo_URI,
@@ -124,7 +103,7 @@
                             var photo_Title = item.media$group.media$title.$t;
                             });
                         });
-                    });
+//                    });
         </script>
     </body>
 </html>

@@ -1,0 +1,42 @@
+
+
+                        body {
+                            background:url("patternback.png");
+
+                        }
+
+                        .black {
+                            margin-bottom:10px;
+
+                            background-color:#222;
+                            color: #ccc;
+                        }
+                        .black h1{
+                            color: #ccc;
+                        }
+                        .black a{
+                            color:#ccc;
+                            font-size:1em;
+                        }
+                        .black h5{
+                            color:#ccc;
+                        }
+                        .black dd{
+                            position: relative;
+                            top:50px;
+                            vertical-align:bottom;
+                            margin-right:10px;
+                            font-weight:bold;
+                        }
+                        .black dt{
+                            position:relative;
+                            vertical-align:bottom;
+                            top:25px;
+                            margin-right:40px;
+
+                        }
+                        #images li{
+                            text-align:center;
+                        }
+
+
