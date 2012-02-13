@@ -5,38 +5,60 @@
 
                         }
 
-                        .black {
-                            margin-bottom:10px;
+                        .black div{
 
-                            background-color:#222;
-                            color: #ccc;
                         }
                         .black h1{
-                            color: #ccc;
+                            color: black;
+                            font-size:4.5em;
+                            font-family: "Times New Roman";
                         }
-                        .black a{
-                            color:#ccc;
+
+                        h3 {
+                            font-family:"Times New Roman";
+                            text-align:center;
+                        }
+                        .choice{
+                            position:relative;
+                            top:80px;
+
+                        }
+                        .black .nav{
+                            font-weight:bold;
+                            font-family:Arial;
+                            color:black;
                             font-size:1em;
+                            text-align:left;
+                        }
+                        .navbar{
+                            position:relative;
+                            margin-top:40px;
+                            text-align:left;
+                            margin-bottom:40px;
+
                         }
                         .black h5{
                             color:#ccc;
                         }
-                        .black dd{
-                            position: relative;
-                            top:50px;
-                            vertical-align:bottom;
-                            margin-right:10px;
-                            font-weight:bold;
-                        }
-                        .black dt{
+                        #images{
                             position:relative;
-                            vertical-align:bottom;
-                            top:25px;
-                            margin-right:40px;
-
                         }
                         #images li{
+                            border-radius:5px;
                             text-align:center;
+                            background-color:#eee;
+                            padding-top:10px;
                         }
+                        #images a{
+                            margin-bottom:10px;
+                            }
+
+                            #contact{
+                                margin-top:30px;
+                            }
+
+                            .main {
+                                margin-top:30px;
+                            }
 
 
