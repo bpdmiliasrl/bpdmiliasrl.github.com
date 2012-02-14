@@ -40,13 +40,16 @@
                         .black h5{
                             color:#ccc;
                         }
+                        h4{
+                            margin-bottom:20px;
+                            }
                         #images{
                             position:relative;
                         }
                         #images li{
                             border-radius:5px;
                             text-align:center;
-                            background-color:#eee;
+                            background-color:#fafafa;
                             padding-top:10px;
                         }
                         #images a{
