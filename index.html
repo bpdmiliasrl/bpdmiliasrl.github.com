@@ -127,12 +127,10 @@
                                 + "&fields="    +   "entry(media:group,id)"
                                 + "&thumbsize=" +   288;
 
-                                console.log(json_Album_URI);
                                 $.getJSON(json_Album_URI,
                                     function(data){
                                     $.each(data.feed.entry, function(i,item){
                                         //Thumbnail URL
-                                        console.log(data.feed.entry);
                                         var album_ID = item.id.$t;
                                         album_ID = album_ID.split('/')[9].split('?')[0];
                                         //Album Title
