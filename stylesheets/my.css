@@ -1,66 +1,66 @@
 
 
-                        body {
+body {
 
-                        }
+}
 
-                        .black div{
+.black div{
 
-                        }
-                        .black h1{
-                            color: black;
-                            font-size:4em;
-                            font-family: "Times New Roman";
-                        }
+}
+.black h1{
+    color: black;
+    font-size:4em;
+    font-family: "Times New Roman";
+}
 
-                        h3 {
-                            font-family:"Times New Roman";
-                            text-align:center;
-                        }
-                        .choice{
-                            position:relative;
-                            top:80px;
+h3 {
+    font-family:"Times New Roman";
+    text-align:center;
+}
+.choice{
+    position:relative;
+    top:80px;
 
-                        }
-                        .black .nav{
-                            font-weight:bold;
-                            font-family:Arial;
-                            color:black;
-                            font-size:1em;
-                            text-align:left;
-                        }
-                        .navbar{
-                            position:relative;
-                            margin-top:35px;
-                            text-align:left;
-                            margin-bottom:40px;
+}
+.black .nav{
+    font-weight:bold;
+    font-family:Arial;
+    color:black;
+    font-size:1em;
+    text-align:left;
+}
+.navbar{
+    position:relative;
+    margin-top:35px;
+    text-align:left;
+    margin-bottom:40px;
 
-                        }
-                        .black h5{
-                            color:#ccc;
-                        }
-                        h4{
-                            margin-bottom:20px;
-                            }
-                        #images{
-                            position:relative;
-                        }
-                        #images li{
-                            border-radius:5px;
-                            text-align:center;
-                            background-color:#fafafa;
-                            padding-top:10px;
-                        }
-                        #images a{
-                            margin-bottom:10px;
-                            }
+}
+.black h5{
+    color:#ccc;
+}
+h4{
+    margin-bottom:20px;
+}
+#images{
+    position:relative;
+}
+#images li{
+    border-radius:5px;
+    text-align:center;
+    background-color:#fafafa;
+    padding-top:10px;
+}
+#images a{
+    margin-bottom:10px;
+}
 
-                            #contact{
-                                margin-top:30px;
-                            }
+#contact{
+    margin-top:30px;
+}
 
-                            .main {
-                                margin-top:30px;
-                            }
+.main {
+    margin-top:30px;
+}
 
 
