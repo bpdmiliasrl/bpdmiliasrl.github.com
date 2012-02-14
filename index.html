@@ -40,7 +40,7 @@
                          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                          })();
 
-</script>
+                     </script>
 
                  </head>
 
@@ -105,49 +105,48 @@
                      </div>
 
                      <script src="/javascripts/jquery.min.js"></script>
-                    <script src="/javascripts/modernizr.foundation.js"></script>
+                     <script src="/javascripts/modernizr.foundation.js"></script>
                      <script src="/javascripts/foundation.js"></script>
                      <script src="/javascripts/app.js"></script>
 
                      <script type="text/javascript">
 
-                 //        jQuery.support.cors = true;
-                         $.ajaxSetup({cache:false});
+                         //        jQuery.support.cors = true;
+                     $.ajaxSetup({cache:false});
 
-                         $(document).ready(function(){
-                                 var json_Album_URI = "https://picasaweb.google.com/data/feed/base/"
-                                 + "user/"       +   "110848800261753814612"
-                                 + "?alt="       +   "json"
-                                 + "&kind="      +   "album"
-                                 + "&hl="        +   "en_US"
-                                 + "&fields="    +   "entry(media:group,id)"
-                                 + "&thumbsize=" +   "288"
-                                 + "&callback=?";
+                     $(document).ready(function(){
+                             var json_Album_URI = "https://picasaweb.google.com/data/feed/base/"
+                             + "user/"       +   "110848800261753814612"
+                             + "?alt="       +   "json"
+                             + "&kind="      +   "album"
+                             + "&hl="        +   "en_US"
+                             + "&fields="    +   "entry(media:group,id)"
+                             + "&thumbsize=" +   "288"
+                             + "&callback=?";
 
 
-                                 $.getJSON(json_Album_URI,function(data){
-                                 
-                                     $.each(data.feed.entry, function(i,item){
-                                         //Thumbnail URL
-                                         var album_ID = item.id.$t;
-                                         album_ID = album_ID.split('/')[9].split('?')[0];
-                                         //Album Title
-                                         var album_Title = item.media$group.media$title.$t;
-                                         //Album Description
-                                         var album_Description = item.media$group.media$description.$t;
-                                         $.each(item.media$group.media$thumbnail, function(i,item){
-                                             var album_thumb_URL = item.url;
-                                             $('#images').append("<li><a href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><a class='big nice black button' href='/catalog.html?id="+album_ID+"'>"+album_Title+"</a></li>");
-                                             });
+                             $.getJSON(json_Album_URI,function(data){
+
+                                 $.each(data.feed.entry, function(i,item){
+                                     //Thumbnail URL
+                                     var album_ID = item.id.$t;
+                                     album_ID = album_ID.split('/')[9].split('?')[0];
+                                     //Album Title
+                                     var album_Title = item.media$group.media$title.$t;
+                                     //Album Description
+                                     var album_Description = item.media$group.media$description.$t;
+                                     $.each(item.media$group.media$thumbnail, function(i,item){
+                                         var album_thumb_URL = item.url;
+                                         $('#images').append("<li><a href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><a class='big nice black button' href='/catalog.html?id="+album_ID+"'>"+album_Title+"</a></li>");
                                          });
-
-                                     $.ajaxSetup({ cache: true });
-
                                      });
-                                 //
-                         });
-</script>
-                </body>
-            </html>
+
+                                 $.ajaxSetup({ cache: true });
+
+                                 });
+                     });
+                 </script>
+             </body>
+         </html>
 
 
