@@ -42,7 +42,7 @@
                          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                          })();
 
-                     </script>
+</script>
 
                  </head>
 
@@ -76,9 +76,6 @@
                      </div>
 
 
-                     <!-- Le javascript
-                     ================================================== -->
-                     <!-- Placed at the end of the document so the pages load faster -->
 
                      <script src="/javascripts/jquery.min.js"></script>
                      <script src="/javascripts/modernizr.foundation.js"></script>
@@ -86,42 +83,41 @@
                      <script src="/javascripts/app.js"></script>
 
                      <script type="text/javascript">
-                         //        $(document).ready(function(){
-                     var album_ID = window.location.toString();
-                     album_ID = album_ID.split('?')[1].split('=')[1];
-                     var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
-                     + "user/"       +   "110848800261753814612"
-                     + "/albumid/"   +  album_ID 
-                     + "?alt="       +   "json"
-                     + "&kind="      +   "photo"
-                     + "&hl="        +   "en_US"
-                     + "&fields="    +   "entry(media:group,id)"
-                     + "&thumbsize=" +   "220"
-                     + "&imgmax="    +   1600;
+                         $(document).ready(function(){
+                                 var album_ID = window.location.toString();
+                                 album_ID = album_ID.split('?')[1].split('=')[1];
+                                 var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
+                                 + "user/"       +   "110848800261753814612"
+                                 + "/albumid/"   +  album_ID 
+                                 + "?alt="       +   "json"
+                                 + "&kind="      +   "photo"
+                                 + "&hl="        +   "en_US"
+                                 + "&fields="    +   "entry(media:group,id)"
+                                 + "&thumbsize=" +   "220"
+                                 + "&imgmax="    +   1600;
 
-                     $.getJSON(json_Photo_URI,
-                             function(data){
-                             $.each(data.feed.entry, function(i,item){
-                                 //Photo URL
-                                 var photo_URL ;
-                                 $.each(item.media$group.media$content, function(i,item){
-                                     //                $('#images').append("Image Photo URL: <a href='" + photo_URL + "'>Photo</a><br />");
-                                     photo_URL = item.url;
+                                 $.getJSON(json_Photo_URI,
+                                     function(data){
+                                     $.each(data.feed.entry, function(i,item){
+                                         //Photo URL
+                                         var photo_URL ;
+                                         $.each(item.media$group.media$content, function(i,item){
+                                             photo_URL = item.url;
+                                             });
+                                         //Thumbnail URL
+                                         var photo_Thumb_URL ;
+                                         $.each(item.media$group.media$thumbnail, function(i,item){
+                                             //                        $.each(item.media$group.media, function(i,item){
+                                             photo_Thumb_URL = item.url;
+                                         });
+                                             var photo_ID = item.id.$t;
+                                             photo_ID = photo_ID.split('/')[11].split('?')[0];
+                                             $('#images').append("<li class='span2'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></li>");
+                                             //Photo Title
+                                             var photo_Title = item.media$group.media$title.$t;
+                                             });
+                                         });
                                      });
-                                 //Thumbnail URL
-                                 var photo_Thumb_URL ;
-                                 $.each(item.media$group.media$thumbnail, function(i,item){
-                                     //                        $.each(item.media$group.media, function(i,item){
-                                     photo_Thumb_URL = item.url;
-                                 });
-                                     var photo_ID = item.id.$t;
-                                     photo_ID = photo_ID.split('/')[11].split('?')[0];
-                                     $('#images').append("<li class='span2'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></li>");
-                                     //Photo Title
-                                     var photo_Title = item.media$group.media$title.$t;
-                                     });
-                                 });
-                             //                    });
-                    </script>
-            </body>
-        </html>
+                         </script>
+                     </body>
+                 </html>
