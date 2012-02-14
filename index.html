@@ -104,12 +104,15 @@
                          </div>
                      </div>
 
-                     <script src="/javascripts/jquery.min.js"></script>
-                     <script src="/javascripts/modernizr.foundation.js"></script>
+                     <script src="/javascripts/jquery.min1.js"></script>
+                    <script src="/javascripts/modernizr.foundation.js"></script>
                      <script src="/javascripts/foundation.js"></script>
                      <script src="/javascripts/app.js"></script>
 
                      <script type="text/javascript">
+
+                 //        jQuery.support.cors = true;
+                         $.ajaxSetup({cache:false});
 
                          $(document).ready(function(){
                                  var json_Album_URI = "https://picasaweb.google.com/data/feed/base/"
@@ -118,10 +121,12 @@
                                  + "&kind="      +   "album"
                                  + "&hl="        +   "en_US"
                                  + "&fields="    +   "entry(media:group,id)"
-                                 + "&thumbsize=" +   288;
+                                 + "&thumbsize=" +   "288"
+                                 + "&callback=?";
 
-                                 $.getJSON(json_Album_URI,
-                                     function(data){
+
+                                 var result = $.getJSON(json_Album_URI,function(data){
+                                 
                                      $.each(data.feed.entry, function(i,item){
                                          //Thumbnail URL
                                          var album_ID = item.id.$t;
@@ -135,7 +140,13 @@
                                              $('#images').append("<li><a href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><a class='big nice black button' href='/catalog.html?id="+album_ID+"'>"+album_Title+"</a></li>");
                                              });
                                          });
-                                     });
+
+                                     $.ajaxSetup({ cache: true });
+
+                                     })
+                                 .success(function() { alert("second success"); })
+.error(function() { alert("error"); })
+.complete(function() { alert("complete"); });
                          });
                 </script>
                 </body>
