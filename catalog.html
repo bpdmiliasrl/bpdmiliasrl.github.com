@@ -29,99 +29,99 @@
                     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
                     <![endif]-->
 
-	<link rel="stylesheet" href="stylesheets/my.css">
-<script type="text/javascript">
+                    <link rel="stylesheet" href="stylesheets/my.css">
+                    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-29166241-1']);
-  _gaq.push(['_trackPageview']);
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-29166241-1']);
+                        _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+                        (function() {
+                         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                         })();
 
-</script>
+                     </script>
 
-                </head>
+                 </head>
 
-                <body>
+                 <body>
 
-                    <div class="container black">
-                        <div class="row">
+                     <div class="container black">
+                         <div class="row">
 
-                            <div class="three columns">
+                             <div class="three columns">
 
-                                <a  href="/"><h1>milia</h1></a>
-                            </div>
-                            <div class="eight columns navbar">
-                                <div class="row">
-                                    <div class="two columns nav"><a class="nav" href="/">Αρχική</a></div>
-                                    <div class="two columns nav"><a class="nav" href="/#catalog">Κατάλογοι</a></div>
-                                    <div class="two columns nav"><a class="nav" href="/#info">Πληροφορίες</a></div>
-                                    <div class="one columns nav"><a class="nav" href="/#contact">Επικοινωνία</a></div>
-                                    <div class="one columns nav"></div>
-                                </div>
-                            </div>
-                            <div class="one columns"></div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="twelve columns">
-                                <ul id="images" class="block-grid mobile five-up"></ul>
-                            </div>
-                        </div>
-                    </div>
+                                 <a  href="/"><h1>milia</h1></a>
+                             </div>
+                             <div class="eight columns navbar">
+                                 <div class="row">
+                                     <div class="two columns nav"><a class="nav" href="/">Αρχική</a></div>
+                                     <div class="two columns nav"><a class="nav" href="/#catalog">Κατάλογοι</a></div>
+                                     <div class="two columns nav"><a class="nav" href="/#info">Πληροφορίες</a></div>
+                                     <div class="one columns nav"><a class="nav" href="/#contact">Επικοινωνία</a></div>
+                                     <div class="one columns nav"></div>
+                                 </div>
+                             </div>
+                             <div class="one columns"></div>
+                         </div>
+                     </div>
+                     <div class="container">
+                         <div class="row">
+                             <div class="twelve columns">
+                                 <ul id="images" class="block-grid mobile five-up"></ul>
+                             </div>
+                         </div>
+                     </div>
 
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+                     <!-- Le javascript
+                     ================================================== -->
+                     <!-- Placed at the end of the document so the pages load faster -->
 
-	<script src="/javascripts/jquery.min.js"></script>
-	<script src="/javascripts/modernizr.foundation.js"></script>
-	<script src="/javascripts/foundation.js"></script>
-	<script src="/javascripts/app.js"></script>
+                     <script src="/javascripts/jquery.min.js"></script>
+                     <script src="/javascripts/modernizr.foundation.js"></script>
+                     <script src="/javascripts/foundation.js"></script>
+                     <script src="/javascripts/app.js"></script>
 
-    <script type="text/javascript">
-//        $(document).ready(function(){
-                var album_ID = window.location.toString();
-                album_ID = album_ID.split('?')[1].split('=')[1];
-                var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
-                + "user/"       +   "110848800261753814612"
-                + "/albumid/"   +  album_ID 
-                + "?alt="       +   "json"
-                + "&kind="      +   "photo"
-                + "&hl="        +   "en_US"
-                + "&fields="    +   "entry(media:group,id)"
-                + "&thumbsize=" +   "220"
-                + "&imgmax="    +   1600;
+                     <script type="text/javascript">
+                         //        $(document).ready(function(){
+                     var album_ID = window.location.toString();
+                     album_ID = album_ID.split('?')[1].split('=')[1];
+                     var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
+                     + "user/"       +   "110848800261753814612"
+                     + "/albumid/"   +  album_ID 
+                     + "?alt="       +   "json"
+                     + "&kind="      +   "photo"
+                     + "&hl="        +   "en_US"
+                     + "&fields="    +   "entry(media:group,id)"
+                     + "&thumbsize=" +   "220"
+                     + "&imgmax="    +   1600;
 
-                $.getJSON(json_Photo_URI,
-                    function(data){
-                    $.each(data.feed.entry, function(i,item){
-                        //Photo URL
-                        var photo_URL ;
-                        $.each(item.media$group.media$content, function(i,item){
-                            //                $('#images').append("Image Photo URL: <a href='" + photo_URL + "'>Photo</a><br />");
-                            photo_URL = item.url;
-                            });
-                        //Thumbnail URL
-                        var photo_Thumb_URL ;
-                        $.each(item.media$group.media$thumbnail, function(i,item){
-                            //                        $.each(item.media$group.media, function(i,item){
-                            photo_Thumb_URL = item.url;
-                        });
-                            var photo_ID = item.id.$t;
-                            photo_ID = photo_ID.split('/')[11].split('?')[0];
-                            $('#images').append("<li class='span2'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></li>");
-                            //Photo Title
-                            var photo_Title = item.media$group.media$title.$t;
-                            });
-                        });
-//                    });
-        </script>
-    </body>
-</html>
+                     $.getJSON(json_Photo_URI,
+                             function(data){
+                             $.each(data.feed.entry, function(i,item){
+                                 //Photo URL
+                                 var photo_URL ;
+                                 $.each(item.media$group.media$content, function(i,item){
+                                     //                $('#images').append("Image Photo URL: <a href='" + photo_URL + "'>Photo</a><br />");
+                                     photo_URL = item.url;
+                                     });
+                                 //Thumbnail URL
+                                 var photo_Thumb_URL ;
+                                 $.each(item.media$group.media$thumbnail, function(i,item){
+                                     //                        $.each(item.media$group.media, function(i,item){
+                                     photo_Thumb_URL = item.url;
+                                 });
+                                     var photo_ID = item.id.$t;
+                                     photo_ID = photo_ID.split('/')[11].split('?')[0];
+                                     $('#images').append("<li class='span2'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></li>");
+                                     //Photo Title
+                                     var photo_Title = item.media$group.media$title.$t;
+                                     });
+                                 });
+                             //                    });
+                    </script>
+            </body>
+        </html>
