@@ -125,7 +125,7 @@
                                  + "&callback=?";
 
 
-                                 var result = $.getJSON(json_Album_URI,function(data){
+                                 $.getJSON(json_Album_URI,function(data){
                                  
                                      $.each(data.feed.entry, function(i,item){
                                          //Thumbnail URL
@@ -143,10 +143,7 @@
 
                                      $.ajaxSetup({ cache: true });
 
-                                     })
-                                 .success(function() { alert("second success"); })
-.error(function() { alert("error"); })
-.complete(function() { alert("complete"); });
+                                     });
                          });
                 </script>
                 </body>
