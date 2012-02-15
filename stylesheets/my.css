@@ -8,9 +8,12 @@ body {
 
 }
 .black h1{
-    color: black;
-    font-size:4em;
-    font-family: "Times New Roman";
+    position:relative;
+    margin-top:14px;
+    color:black;
+    font-size:3.8em;
+    text-transform:uppercase;
+    font-family:'Open Sans Condensed', sans-serif;
 }
 
 h3 {
@@ -24,10 +27,12 @@ h3 {
 }
 .black .nav{
     font-weight:bold;
-    font-family:Arial;
-    color:black;
+    font-family:'Open Sans Condensed', sans-serif;
+    text-transform:uppercase;
     font-size:1em;
-    text-align:left;
+    width:100%;
+
+    text-align:center;
 }
 .navbar{
     position:relative;
