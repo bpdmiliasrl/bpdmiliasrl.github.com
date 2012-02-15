@@ -3,8 +3,14 @@
 body {
     background:#f5f5ef;
     background-image:url("../burlap.jpg");
-    background-repeat:repeat-x;
 
+}
+p{
+
+}
+.black{
+
+    background-color:black;
 }
 
 .black div{
@@ -13,7 +19,8 @@ body {
 .black h1{
     position:relative;
     margin-top:14px;
-    color:black;
+    text-shadow:#fff 1px 1px 0;
+    color:#f5f5ea;
     font-size:3.8em;
     text-transform:uppercase;
     font-family:'Open Sans Condensed', sans-serif;
@@ -41,7 +48,7 @@ h3 {
     position:relative;
     margin-top:35px;
     text-align:left;
-    margin-bottom:40px;
+    margin-bottom:20px;
 
 }
 .black h5{
@@ -51,6 +58,7 @@ h4{
     margin-bottom:20px;
     font-size:1.75em;
     font-family:'Open Sans Condensed', sans-serif;
+    text-shadow: #711 1px 1px 0;
 }
 #images{
     position:relative;
@@ -77,7 +85,7 @@ h1,h2,h3,h4,h5,h6 {
     background-color:#fafafa;
     border-radius:5px;
     padding:10px;
-    border:1px solid #ddd;
+    border:1px solid #bbb;
 }
 
 .darkblue{
