@@ -42,8 +42,7 @@ h3 {
 h4{
     margin-bottom:20px;
     font-size:1.75em;
-    font-weight:bold;
-    font-family:Arial;
+    font-family:'Open Sans Condensed', sans-serif;
 }
 #images{
     position:relative;
@@ -74,10 +73,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .darkblue{
-    background:#2a84af;
+    background:#0977bb;
 }
 
 .darkblue :hover {
-    background:#2a84af;
+    background:#0977bb;
 
 }
