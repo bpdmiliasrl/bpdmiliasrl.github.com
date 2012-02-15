@@ -46,10 +46,7 @@ h4{
     position:relative;
 }
 #images li{
-    border-radius:5px;
     text-align:center;
-    background-color:#fafafa;
-    padding-top:10px;
 }
 #images a{
     margin-bottom:10px;
@@ -65,5 +62,11 @@ h4{
 
 h1,h2,h3,h4,h5,h6 {
     color:#333;
+}
+.photowrap {
+    background-color:#fafafa;
+    border-radius:5px;
+    padding:10px;
+    border:1px solid #ddd;
 }
 

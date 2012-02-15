@@ -138,7 +138,7 @@
                                      var album_Description = item.media$group.media$description.$t;
                                      $.each(item.media$group.media$thumbnail, function(i,item){
                                          var album_thumb_URL = item.url;
-                                         $('#images').append("<li><a href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><a class=' black button radius' href='/catalog.html?id="+album_ID+"'>"+album_Title+"</a></li>");
+                                         $('#images').append("<li><div class='photowrap'><a href='/catalog.html?id="+ album_ID+"'><img src='" + album_thumb_URL +"'></a><a class=' black button radius' href='/catalog.html?id="+album_ID+"'>"+album_Title+"</a></div></li>");
                                          });
                                      });
 

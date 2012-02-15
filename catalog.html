@@ -113,7 +113,7 @@
                                          });
                                              var photo_ID = item.id.$t;
                                              photo_ID = photo_ID.split('/')[11].split('?')[0];
-                                             $('#images').append("<li class='span2'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></li>");
+                                             $('#images').append("<li><div class='photowrap'>  <a class='thumbnail' href='/product.html?albumid="+album_ID+"&id="+ photo_ID +"'><img src='" + photo_Thumb_URL + "'></a></div></li>");
                                              //Photo Title
                                              var photo_Title = item.media$group.media$title.$t;
                                              });
