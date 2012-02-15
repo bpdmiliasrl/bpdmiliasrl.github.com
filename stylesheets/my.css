@@ -2,6 +2,9 @@
 
 body {
     background:#f5f5ef;
+    background-image:url("../burlap.jpg");
+    background-repeat:repeat-x;
+
 }
 
 .black div{
