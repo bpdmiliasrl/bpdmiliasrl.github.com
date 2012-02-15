@@ -41,6 +41,9 @@ h3 {
 }
 h4{
     margin-bottom:20px;
+    font-size:1.75em;
+    font-weight:bold;
+    font-family:Arial;
 }
 #images{
     position:relative;
@@ -61,7 +64,7 @@ h4{
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color:#333;
+    color:#933;
 }
 .photowrap {
     background-color:#fafafa;
@@ -70,3 +73,11 @@ h1,h2,h3,h4,h5,h6 {
     border:1px solid #ddd;
 }
 
+.darkblue{
+    background:#2a84af;
+}
+
+.darkblue :hover {
+    background:#2a84af;
+
+}
